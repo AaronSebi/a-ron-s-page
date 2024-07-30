@@ -1,0 +1,168 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juegos</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url('https://source.unsplash.com/random/1920x1080?gaming') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            color: #333;
+        }
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+        }
+        .menu {
+            width: 20%;
+            background: rgba(255, 182, 193, 0.7);
+            color: #333;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .content {
+            width: 80%;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            display: none;
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            font-family: 'Poppins', sans-serif;
+        }
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .menu a {
+            display: block;
+            color: #333;
+            text-decoration: none;
+            padding: 10px;
+            margin: 10px 0;
+            background: #FFC0CB;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .menu a:hover {
+            background: #FFB6C1;
+        }
+        .social-icons {
+            position: fixed;
+            bottom: 10px;
+            left: 20px;
+        }
+        .social-icons img {
+            width: 40px;
+            margin: 0 10px;
+            filter: hue-rotate(330deg) brightness(0.8);
+        }
+        .logo {
+            position: fixed;
+            top: 10px;
+            right: 20px;
+        }
+        .logo img {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="menu">
+            <a onclick="showContent('genshin-impact')">Genshin Impact</a>
+            <a onclick="showContent('zenless-zone-zero')">Zenless Zone Zero</a>
+            <a onclick="showContent('honkai-star-rail')">Honkai: Star Rail</a>
+            <a onclick="showContent('minecraft')">Minecraft</a>
+            <a onclick="showContent('pokemon')">Pokémon</a>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank"><img src="https://img.icons8.com/ios-filled/50/FF69B4/facebook-new.png" alt="Facebook"></a>
+                <a href="https://twitter.com" target="_blank"><img src="https://img.icons8.com/ios-filled/50/FF69B4/twitter.png" alt="X"></a>
+                <a href="https://instagram.com" target="_blank"><img src="https://img.icons8.com/ios-filled/50/FF69B4/instagram-new.png" alt="Instagram"></a>
+                <a href="https://discord.com" target="_blank"><img src="https://img.icons8.com/ios-filled/50/FF69B4/discord-logo.png" alt="Discord"></a>
+                <a href="https://github.com" target="_blank"><img src="https://img.icons8.com/ios-filled/50/FF69B4/github.png" alt="GitHub"></a>
+            </div>
+        </div>
+        <div class="content" id="genshin-impact">
+            <div class="logo">
+                <img src="https://via.placeholder.com/100" alt="Logo">
+            </div>
+            <h1>Genshin Impact</h1>
+            <p>Genshin Impact es un juego de rol de acción gratuito desarrollado y publicado por miHoYo. El juego presenta un mundo abierto de fantasía y un sistema de combate basado en elementos mágicos y cambio de personajes.</p>
+        </div>
+        <div class="content" id="zenless-zone-zero">
+            <div class="logo">
+                <img src="https://via.placeholder.com/100" alt="Logo">
+            </div>
+            <h1>Zenless Zone Zero</h1>
+            <p>Zenless Zone Zero es un próximo juego de acción y aventuras desarrollado por miHoYo. El juego se ambienta en una ciudad post-apocalíptica con combates dinámicos y una narrativa intrigante.</p>
+        </div>
+        <div class="content" id="honkai-star-rail">
+            <div class="logo">
+                <img src="https://via.placeholder.com/100" alt="Logo">
+            </div>
+            <h1>Honkai: Star Rail</h1>
+            <p>Honkai: Star Rail es un próximo juego de rol por turnos desarrollado por miHoYo. Los jugadores viajarán por el universo en un tren espacial mientras luchan contra enemigos y descubren nuevos mundos.</p>
+        </div>
+        <div class="content" id="minecraft">
+            <div class="logo">
+                <img src="https://via.placeholder.com/100" alt="Logo">
+            </div>
+            <h1>Minecraft</h1>
+            <p>Minecraft es un videojuego de construcción de tipo sandbox creado por Markus Persson y desarrollado por Mojang. Los jugadores pueden explorar un mundo tridimensional generado proceduralmente y construir estructuras.</p>
+        </div>
+        <div class="content" id="pokemon">
+            <div class="logo">
+                <img src="https://via.placeholder.com/100" alt="Logo">
+            </div>
+            <h1>Pokémon</h1>
+            <p>Pokémon es una franquicia de medios creada por Satoshi Tajiri y Ken Sugimori, y es centrada en criaturas ficticias llamadas "Pokémon", que los humanos, conocidos como Entrenadores de Pokémon, atrapan y entrenan para luchar entre sí.</p>
+        </div>
+    </div>
+    <script>
+        function showContent(id) {
+            var contents = document.querySelectorAll('.content');
+            contents.forEach(function(content) {
+                content.style.display = 'none';
+            });
+            document.getElementById(id).style.display = 'block';
+            
+            // Cambiar la imagen de fondo según el juego
+            var backgroundUrl;
+            switch (id) {
+                case 'genshin-impact':
+                    backgroundUrl = 'url("https://lh3.googleusercontent.com/fife/ALs6j_Gzjk_YvC4SQ9X-12HyYdhFIQ64LYi9Zi9GK07QOPYLF0Ue-daq-hQJ3dbZIU3WLsPfX-T2eBfiRBiJ71J1dh1dXE0KOy_08Pz5yE-038MAOveRoJfcnP932LcdJhr93JMWQVRMlJ-6axY9AXsegIGMA1MRuKWZ7oB00TQYWmIyQ352UalS2-hcYi8Fl33JfkpqhUPlvxavERYtcbn1JvAxJjh9xpzqlwqvYMSB06KTNppAcgSyEo7gGG3xi8Z2DqMNS4pecVyGlAL7ybQN6AA66dkzefjs2rub96gVOB4-PWNekEyQcf4xlj2qjRfHJ2RLUwKEPRtwirHTQXkao6VrJ89UafcwyeiaMWUJKgLvICyrWYi7kyGTUiss8V7qw_Epi5dou5zO02RlhkQiqNEbdKmpdJvFx-Jj3_GvsMgYA2EsOx0_SZ8NB4emYoWx2cn6ToMjW5u9kbEJ4ZLm8NP3PLWKSX1Am4YsVMoOn58b3ff_3zg5igEXtYtIsYe0SxCr0ktTl5WE1zRJ-RJTYqXnc45Pkhowm0cWi58AJ795zw0TxUWuhHdh_HUNgWzKM-JpuhI024mryKg7KdcULd7nISkHjBqNlJGgt3YzlEmQYSEKSeUhgUZ3eN1FplnsUywPo4t3_y0rXcxhqJ0U-zXqLovwBMgEmGjhERNgiBjCW18hFizWNf5VpQL3GXkmGfMkS8e-TojzF8nyBuh2Jet5-EL1P5wAqh5sjU660P0c02OaRB_wH4-MEstu0gRoazcASxJUw5iLr67dWqjgx93kcxNGa7xkF_ds-Yh2SQd3oiflVRyL5UaeJd82G3HclDPyiDr3Th9LXHnOPoIAPYgYHarVEI5pMsIe8ZayqUDeXLZCXtOwl6ABDFQvGE30pMeE6UXOhkpZfl3CyII_IK92WvG0XFep7HTih4AP8DqoGZnTBFgvpGj1Vj_b_sjk47FMElj8tcIBXPKUFxFAUxl1G2zByyzH3MuXEXwMqJ4vNi7aqPVyUpwnswBZU4eZjczy32KuMWYgVoBM1voFO0tm3yrpRHPBMTwR7SBzqw8hXRBfcNH9ZI0BRpsTXoFjJpd0c-8tvw_Z6Uwn4UX0pSNPRzJRflUhmY3VEjdhOQz3iov2ChkqYQs8OMwR0o40ivj5TvS63ZAAjEjKlTfamtU7iX46DZxWpM32bEJ7SRGBshcG8-95wMxSgp6zftvI7wu9k-uHxDf8yOJhzH5UN0ZHLPoxCKcpiuz0JqLZzAJHY2m-2MnypKYnDa7ApvsNZdrYsL7wO1QEy5NXs1kRWzs9vGBuzJ5ZciEDAQDbpgxwU0iDZBAUTaVgybcZc2vPEQLAHZoCxc14DUtuBfEJw5fCOwy1jHtI4R3Bqga8Df1Tv1L9pVjajC0FtgBsBl86ZW6zBlfkVubsSP9OHPH6Vob9KHcTm1xTLj1WAWAnOaEydFCkD6nsT_F0ETsvrz8wAqL6p7amL_3pMzxw_53z-0frH9fIlsocPqhZ5RRZQ5ZTWAIOhQcP_HkNRLsyxGJAVH12zGBy63nwttNwTWaA_EHNH3wk1HfNJHK2NOBhQE5nHcGszcrLwf7gvLterpT77XLPc2_Ci367dexMDIdGU2CLn5QHLBuSFFs1TDOCwA-19dU-xLFO8gKVc_9ooHTwYkxUaBzoQT3ltrw4e-7MAXplXxGZ8unxBUUwOlfvekXxyuDSt_VgkYMM4LVyyIAzcFmNt68D0PK1GFQLu_FQwSeJWJU4pcINJQ=w1092-h848")';
+                    break;
+                case 'zenless-zone-zero':
+                    backgroundUrl = 'url("https://lh3.googleusercontent.com/fife/ALs6j_HEZopQr7lohLCvJmE2vIlOdTgezpwZrY_BvAbud1JpGozmANafRCG9LlfUCwloh510PMTF3id9DmNR6_GTLggWLfwtUwO3JxJhRKO3FDnP4jgrkEhs26hrACkRUSA8MPVEsyP44tGMmyKa7mgQC1-y5MWuZ_gQB_QIB54ubclgceolswAY0E3LZ4LkYXAVZAavldD_AaPhI7nFIuOxkzxFzDsECLwxtYSmBeZeJ8l9l8LhLwiPfXTwm_2Qr3GEM-ncZcf1I_UGBnR04NP1XtzgWojoDIqWG3rPdxbrwsBHY32wqYPKxPrYYlfdOoG-PoClDRI_u9sowwhs-MTiTJG9GUWZ7n0UiaxqIfxdP0KZFdtnQne9oSgxJ1wH50Hb84DPOtj0qyTsshCY5Uvz9lRyUaf1XFIPyM2xIjNeh209sBMaLVkNwKrwAwWey9tQJgAVL4dTuAh9HhLJbYsStwctU7NucXI-E-89PlmJeHxjst-7EmF4JN9_wdSTvb4L-Ixno5HuMlLhQvr9Lv5LSKRl1ltfQyEQk60j9f1PFPKTo1D9y9Op4CsDC2c6IOkOPtjc65g_-bALZr_OYHN6JKQQVbfNz5pY7XC1qWQ-PWjwITOvCr4yQVoCmH1eBzX4_X5R1y3HcbhzUcF5rA9_vZqVZtpQktw7HTOgX0cWWeC3jKHxIl_hl9E5h_cl-DSjPsPegr8EbkuT0M4MgOPe9c45wVz2t-dm2FxXQ-DdqyGcJO3Wx0usHpThj0MMP-M5N9fux6A47JFlJ_qMQiHZhO4E2tj6CZN_dZkkqJzzleUx16CtI4lNbeCcGIt4vd_KZRElk5G7PcOZYPHjlWfda6_mgaEywTEuBhboCF-hXJVPV0ooEPFecBQRks6guAGBbnLyFVn4brNzVvSSAup5lvNlxvjNXfWhU3iCSfZdPIRx4O-a3lPcIm79sWefZLavLcs4aJoOYkpSX1uLmeTTD03bLGu0SDEJ4jViLHgbcg1MTKvWoDy7zZ0I1zSU2STslVY8LGcYDw6HayPj6gqoJ2DJ0bdl2TL5N_QPAaxvOPj6N8Cj01oPHs5Td1OTPIkkdOxUBa5eqW-m_EnlmksPSMHFqLWWJNcFmPbjeePV-69G7PcnXUCizIH1de4VJizIMF47mzWYImK5wi8qlJDyLR_HxCMbqgftJ2h6H6REXXZgRm-nVgc7ZWWEFb_6EW7HXTWBgn455BTYtTSsZ_pjIL2VsKk-fY874m_JFfnkNmbyecfj9bIqrjdNkRuVEnHZYzPtUjTMfqcVsAbPg5Jv8AZHRRadwkdeChzjOkgegXs8Q9O2sbpieWHWrs_-q-YK6dUOdc5tUkC-xfniXkdh5rGB-_FPLFmqBRizylCMumA22HP3QLnbjfv7NvutrTYSjrkUSC6iQME-xIvHwcjd9p7CQnNbP_QpkQ4z26cc1x_nokE-eIoNbgqn5-VzTtFJRfsTZWvg8gnX5zF6w0ZWjAuysalBSXoheK4G2KZgoDQhlYmMeNuPuw00OaLZb14m2f-TR-sEePDl-nl00E5fpw0fsFQ2nNWqAUpet009bl2IWRSSVtskff02kDavB2stWTqvZ96_FyHTSrR7CSNRHHG8Dj1ASEUqxjisDjpuz2ApQffvWrcxEIv_BVJF428R4UjqwnMS40xgkTEsT03usZe4Sio2if_Jl55noPLcZ3WipE3euBM5T4OZ1Z8xz0Qz2_vCB4bZXR4KjHZ9S_ac1k7KUr6yF9Dm=w1092-h848")';
+                    break;
+                case 'honkai-star-rail':
+                    backgroundUrl = 'url("https://lh3.googleusercontent.com/fife/ALs6j_FF6Xhlqsr0TmsM-LKqMVzd4uFRXAdbLX5vQ0MABEpVe_9KDPPLrCTtKFtZzGRH265Sn7HIPXoBwwk2cknDkusH6jInDOrl02x8zUKUhn53zxvlLJSXMA03_aJVndb9r6-T5Nhpi3nZ1kERG8fC9zoyPdA70CuNZQkVaUZkpT6xiBsZtPtGtbajJxSk83oLN9k-gwrrHVGH-zEv9bSG8eWqWzp2fWVnjyU2XhOKCbRO1kWybrD4zDCzQt3i42WuWCG_Zh1sLXsH0BAo9eCQdSvh-gu9hR6gSl8bRku4sIuGJ2j5G7e4g02K1HspOsi3pL1iMR7LoCAw65V8d6cZPBKX07qe74IP01D-EKGezkD5Z78SsXzoitOr26jGo5oAe4BIxRiVxBvDVNz8y1nDWrSupWfBbMI9uA1_wSIBxjSb_SPAwW6gqICBpDOP841X5OUpMXXIrJYnloFFT7sDZGH5beTBL_vI-N0KcI2zL0YNpzmW3XDPJPMZigbzrYZ5dMbVp2qDjlPOwAHeAPwL4AF8cUEykcUUII5abLt43ssffX9-IGUBBwOcnQiPpjFhsWSLTEKS8dxh7vVyeyorUH_zeoTsqOBenDQP899yGU3E3xvrFtG_xX9grci8ir8TkGq56OfqpHM6cLBlYg6GkxvXtzCLhXR2w1Dbqgxl8H-FkGjGDcU1xomq_2Qo1mVm1Juo_wTEFt-jmsCLs1LVHBoQPifqK0RKriQIFMizjNscI-Ua2MbvMNY-28194FzL8i-8Fp_eYvDkuvBYSdZrsN5mK9FlCCH2wvXUJ5yAwb5eSwkmuBGCHP8KvgWbwNXCjQ7aY8hCYWOErsWzmIKGf8ABkBipN8FQ7PV7MLI8amkU3kUPkeSkhTB_YWtl5mMRPnGj8AvxsWIsGsz5CfH62jLwJQSZmhUv7_aTn7BzfUiVbmKlcdVbBv2BQq_tBPNbevlKGOBQcESoZWzyrjLx5ILj0CQhCNhmcpsZysL5PinBGDCti3xs2mPiyXPHzXlY9dEjnhWBExRh-TDII8qaVGLgEQiLKNvzyLHeoHI5HeA59bSiXYskY6_xDj_hv5nwGZwc1mvgATso_mRlelWZzYAhj3sPZDeNRkA7ivS3kp_4DIBBrhEdHWcNYMmo5tAg1SWqu-4tNS2uVEoiDUPLk23qWPPgiDVFqvT3lVUyi707i163rlQrEM6Wt7TN-tNF_CdndGQczqgZ0ClZA0rlepT-sT5PyA0D-GAyiF0KD9F4-EAldWtErWCN1wb9idJu1jQrondTHQ97Ylt5J1VKr8oO8btdRPcCkmIODY5TyQhLGy6OEukE-4qHG2HxxB6a4MsUJYfbSTh3Dcoc03iq2x2W5Cf9rsfsvdtGyV7y5fPJlkHsF-lBQ5ywELQnoTpTmDm_6BvoVVDiDIKtoW_lzjIZixsykaaL3M3UipoZL7vz1IZckJhGc1c7yCj3Qiod-9ewEoD_-BCAn7VPH091f2o-cD-3PVrKf6Um4AllE15upDbdymb7D87dCV92ktDIv7qs_i7CcoKRSetOfWOitnc1aNbEz286gb4xOEy_JL6f5ojk6RDgIEQ58NEEEOOthN_iuAHvFp7_qqtKvAzY547hSegAQ0KOgd9i5SMVk_clB82JIJJCsTcUUtaut02UN0sqDQrrRXNsPa8OeAkG1UvSemzXmsjjWQ82ELqVGbI6cb1S5995r2-GeGtikdBdk7adFsy6uHTXElBJpQWU9RqCXGNSMrBXzw=w1092-h848)';
+                    break;
+                case 'minecraft':
+                    backgroundUrl = 'url("https://lh3.googleusercontent.com/fife/ALs6j_GU-EApWek8Xg-Xz3xmY3_QwayPOlh68wTzR_5fMTbuWhZqWCUNU-qgaTR8X4Ho5x_hgWZPIwBR5GoJzFXltIkFNV7sSQgY98t9G6c4WTEWf8JpYldvud-27QRqn9Y2xUwIQ1REDjTvnqfrI8sUESg3yGdTKcKpKhiAfM8Jdc0gw8zK3AqQNOnemhrJ7mlVleypmFKDiMcpgLTJghZW3f0_Nwd7hY-joU8UGlOjYmDF9iwUgeVIHmtRAgsDuxh7dy1si8VuCDKGc1DX2i0uiLRdAUt3WPmq9hT-hXx_RZwZSx6466gZdPlT8AzPqE8kU3RCQvrIaVgkH3WHGHUFGhAoxXiNvEAUGUNnb6JXHbFeLsEVOu3aDjBJQU9XIlwaICYSGlPJXLgBnRBkW23ayYxrH6m9zjSFbzd3vHd0FsQgYZ4elBii0CtLukwo3l4Bfs0XodbfNavkUzPrZCfzwm_SWDXHi0ju0ocUzKzfLQQGwiIT4r23lVSaV3sNQzi5dosF042BKuJ31w7BrTwAgVac0AWuJIQMBoXLmGz9pK4qMSY_NwokdxNG0NCX7vcTw3LDGFPvu_Er86P5s0hCSQAUL0eiYhBBHZDivPRjdKR-5GtWWJFkbPK7JxTHN7isbkWfn2QFRY31jF2r4vfRi0kiUUbj9Dwzsqc0qdaASFSAwpGedYBu8JF-jky2qhfRCqrDtLzgONiwLuXiEinQmU55lJvsegPMZcqQ73g6s9cxscG2vtWCnx9EKqhIBsYYerYFjv5fjWX1gco7bGI4sd_vWCOGfyX4h5kPC4ATby_bKS4DIKxkvmL0h4cNwwATJx81dlCyEnapEb-SD-PVTXQAZ_J8hyAO5QVsZk2S0R5xbtD42Rl7fTW412pvKR21YJPVz8CN9zAYJfb6T3PNpTcugWop8ssd1JVVela71qQBY77kYHYZk4XQ6Lb40VZ8zSdvPzb058vey8mVdgxVq3EFe98k3p2R1Hxs82Jfk7gEPePnkyI3wDTg5R1W3XH7KRSwXc_qRSVIR-zsZ9WaRgMSPRGY7KYfdwHK1zqOI8kevYbsFBJtpUfhFoZ4H9O4esQqGF7vceKW-CWEBuYAeSTDgnVIN57ppxvHbkEcqtjrP8bPN_GjcEZ9lf7lJxi8radOv0W1IpyGNQ0sS-cSJUEafadPaNaNuS-JFLm16_usHiXX7JgZzHVuuRCQoO9A-3uQX4N11g0CzlakxiASEvI5TmZwU0DVqrJs2OB_f3IWuOa1i8MtaOChN8bvY2hbDYn1GG67XVO-dEVM8EYvmAgZOoi8an28tTps6C1D6eosfpkV0kPFx9RzyQ4y_qB8ibKlfMtRgLRDNnNmFYDEZzkl1yLDPBNfLRx8T3nM5CfWFeulT5WB2rfV7kWbJObcsnprYJqrprNE3w9XvXqDFTpIl4pokh9d5kC3vSDWhO3h3KXDlhXvIdIw64BwI92RaWwkGn8EoMohUaE-JzaOG2kaoRZktMOKBe-PvKXB3BOHbRzF4rZxFYMd74svOgjqNxP2Qe3pFmSdjXD9Fw-_kMqzdgNcK2HatyojXjWk44sTfsm6tCX7dVpooklBLAwD-CQye7d1Tzu-zy3cxLnD9FfCF2LvVdw7K8hUlsWiT8yluc6Uwgim69AH8JZhBQMmoYrW1ovpA3HUQ2uvLoroJRe7h_nrMn0w7DvCMl_IvaxsI2fgSyiH5ylwuJZw_kRxmdc_SLgsYqJ5yO3gUpGMu6r_3O0USeIR2g=w1092-h848")';
+                    break;
+                case 'pokemon':
+                    backgroundUrl = 'url("https://lh3.googleusercontent.com/fife/ALs6j_EgCYdLBkatPYxZ_p98Mwr5nREsgeJMCzqKOeW-9uJs7syMRnXHyXwoHU6gCVi_XJBpXsph2RjHvLCyBextzPOk6VbVu81yKYXFr6BdJYIstzcyw5pTHdJEhz_gP60s1OMtULJNspPZmFN3sRdYMp4NLanQFHUIW9Gk9LRHG_6kMo3oaaOuROWfuu3H5Mj437mLNEJMhiUJcZw2IccbOVukQvuEusfNfZ_MzfD74xEs3gSi1-LASfnVYKpvYM7aMzSAWrhORpOthGMAvygHk1YRKfMp1V7fOdeyNhfCtrHwh9_B8_Dxcy8XcLzEj1alZuf0JA7KzD6D1SnOve-tcHfv9KBl0PIiKpE7d0jOX6RnnSMZOc4Uyye3-KC3jl_ZApJ4lcxlup9TZzMSbexaKbPWKYtpJmSx7j_J6180bjcK_gkxO5f-Rzs1TwjisVHuxzNbaLSUiPPoqqd3KGaGsx3ITk4r_Jomvtvqt76Ch9tbFshTskpQRgAstXd7NRt5yZNWs4z_Qh0qcV6i3grxv65GSiCpThVNW11x6XD332be-R-Jw5stBAAJGakLte09P0SwvHXWebyeOwJ6DeF6jFJWPHuAjDT4eW3_z82NZCL8JnFVivLGHE-QodZRgBvmfLUlgee0KY8tKhbZ4vQGe7Y9xTo27Hdw36AccGsYom_A3h7FuRTBw0xhtEjBizMopJQixYdT5HfP85QwPcl9s_YStPMBMXI3onQvhhjYjWHzCRHZbTx08tRhoDAbyPdXE4a5-CAq_6p1zwWlNfSSQiTkj4S-pULrgwPlaGxBRMz00yjmv5VYeD6puokB3boLxhXrApbqoAyT0eLoEw7_cFsG1Uyza8ctz53gvBrkSKQE9QxCBj6KsPG2GBuppDQ4PbGYRudtPXVpMkroLUjIwbuYoSf9tg8CDyQaIQx9X-I8rq-QLIsCpmg5v-IO3x-yyUItFJ6yljEwGRSN3HSihdE3LvTSWhY8O7KCktmdpAu3QQ2dIn9iNVRAqHxfu4kfTQQz0F3sKDY5P728uA7FZchkzD1VADB0ZyedIdL8o-Wj1qJy5va1wx2ggY5UP3mj1KpwrvQGXqMt_2O83I78anL9Ut2Hos3IXG-ZOvvYedoni2bK_jnZBtWdXj5NcM-yzSWrWlpSn1wnEJQbZmnxoKz2Y4urX01WydszGN4z-nG9KJH2R0f8V7R1erhv4dkFPw1kUoifU2i9IYvSg2_GRIsuyg4UiQSR9cshOvL_SG9UNn82ajY9nvZrY7Z8qQGIOGW2BAscZiW0rXR9u4n-6MuXhSA6jyiABbyF8g9iVn_JMFBLFCppZQMQ6hMyURgxA_kjtlHR34tHvNxkiQA6safMsM6p9zU5WTDqgFdsuHN_BKmAB34ipytZqI467ItPVuDE91hj_3Amk_dSk3q38BpT9bcl044ZumilA1zLp2IwR0eM8ZOc1SkDuKBFsVWRN9zWEfOU0d0hstJgaRhmjGxgJj5jn9-N6jGF7DibbFCX_jsFWl9OktQmhmI8GAc5blzekfDr2ccYlcgS02WdilKPYqcDv9ErQoemTjTi0MZ7KzYD-tTFhfvU60IhXoD6IuTBIaDySgjLBYuyB-siOdVsIBUrFCbxOCdy5vwWt1uY9NQ7eWjWI88evwn4PnZUHu0x3RyY22rg5MaKJm0iNgYH7B5-Yc8rziGUiTeSfi3TfivYN4DA-BKHZCqfTfTi0kyTDFLUF0TBH7B-CHzDUKPsgN4sLs8P=w1092-h848")';
+                    break;
+                default:
+                    backgroundUrl = 'url("https://lh3.googleusercontent.com/fife/ALs6j_HFy0X3-tYHhnL7yi_O-q__QLw57IplNolZd1Ij5LEtpInf5-4eFF9b9Ha7xm4-E_oIkcUyxSLWFqK9peQ5dAReaD9vtg4-eUgVvq-YaPhk8mKVm0iI8uEw9oGiLqB4o4qLAD1KOd7SLv0Q-DZ6Kw2JoM-QZCRjmFFUzfCzsahP6k3BkNmTvwd8wKtmcI0AJ-utVxHePQ_JyabNWSZzFfQcZ2hp7gic6VM6VQ4UBjw4IZEP3XqipUheYGdjDQeCeBzwn3_jQ_1FIYmggoj8QoNK5HpF1vG_MbuA0KSJVD6vcOW1B6BNR6_NwZJZ8Ez10RWiOYEFmja8YJxqPZ1HyEsgGj_XrgULQmTQZ94DmM9_Bli3t01Su30yMPM01NGwloG4vaZ4AWGnF6tP1H0a5Ba-RS7g-cOrWIkrFCNHIKFz3os3gj81hDz_0yT4EjNf7ba1cfEet8I_BSd4WKgpBQXxZkj2f9UlnfA-H2Agg-ikcTMW3wpmQY1GK4aqn9QJ-THawnkMpVK2Q0zCs1_th_NYOWUwY2b5mh3O51m5gfzRkjO5qM2grcLEM8bPwRLE7XZMm8WAhRdEA58Qe4kiS4LyzC6k940gKuG2KMAd27u9CUEYnle2EA3RrQZth0VsF5yZZfijO25Ce76pTW9bI4vSU9s_wfEdi7hjGe0NSjww5VZYZtAMCKGSPo-qrlX7BI6mVZf7JacUQH7I8t1RGGn4m8FmLyTQOQg2kAA18kDGbKxLRBxH-o1tNHG_v1ws-GE8p2LnuTcxFgacaEr3Hyw1gapwZ4rVzrhVuRo9jILFxhW-90JziYN24yOJf9kFXS1XuepAFjbtTJw_ETM-6aly_nekks9Awz5BAjxED24iAOKGNNDm7iIXznbGT3pmUVx-Jj8GXl4JF4fq0IuVHL79NNWZ6nkhSXKJgxKwHEm0-SyUS7eI3W6JOuLaURdhcux6u1hlX1dcGO-GZil7i06vUrevasRS-y1XruJlYzIrtnsiHRKaLL8iRnwq8389xE5mDUe0FxV1hVnlmzwAfXT2i_RsbFlpTa04dFZM5pZV_ySpKmuywy6h_Da7M17tUYPfV59Yx6eSKMFPqo5Kq8ThEOyexTqxKWpbyussNPQ092OqBTIdf3YK6j7vHckRHM88HByZTV129dRsSZ2nCPEzNWXHcXi7wmLFS3-5e_Emxi04tolioRn9zrqxkS9JsKm49zjztmw9WDetDpPtNrnZhCWBf_Qss9rrK2z6yn0Lp4qLT6PrnX2yeAGqhEo_RCcLpKzUECia2eqjvi6usmjDf1wxQ9QrTYldVvSrepy_zcTmgkyX4yykhW69w7jCnOa7cBE9hVzzNB6e2-oG8qCACkkKWBCXuDW5uIYcY5J3FkDuw2V0_f9hty5No0P4IWDPcmW2ka51STCA-czpuPuSvrqNpWFfGI2qBvp4Q6FSp0_dsWo42fUxjdbEHhGPncHPnmni9Tins3h_yL2SWzE-semTaXkwUJiof2juRt9yIGUzvdgiEDo1Z7v-LialC8y8mE6Rh-PJGsPE25OYc1r-X_0dNrQs-xEgLG09DSG9SSi7hxcP0dtagduarersQxPXrz0Eo2e20wucbm7D6T96dgza9e_OhdK-XB_BadUelKS5OO_nQbhAYIDlz7nQhG1VKlvxrtT2XJU5CzEMGoglWkQft0Wp8GByykI_waCklD4sLIX0PGlkoYVNp-OxMOjIi3ObnHuSD5vJoOcEJ7MGmSdjt9pi6A=w1092-h848")';
+                    break;
+            }
+            document.body.style.backgroundImage = backgroundUrl;
+        }
+        // Mostrar el primer contenido por defecto
+        showContent('genshin-impact');
+    </script>
+</body>
+</html>
